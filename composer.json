@@ -1,0 +1,53 @@
+{
+    "name": "itinerisltd/avado-prerequisites-demo",
+    "type": "wordpress-plugin",
+    "description": "This is a demo!",
+    "homepage": "https://github.com/ItinerisLtd/avado-prerequisites-demo",
+    "license": "GPL-2.0-or-later",
+     "authors": [
+        {
+            "name": "Itineris Limited",
+            "email": "hello@itineris.co.uk",
+            "homepage": "https://itineris.co.uk/",
+            "role": "Company"
+        },
+        {
+            "name": "Tang Rufus",
+            "email": "tangrufus@gmail.com",
+            "homepage": "https://typist.tech/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "composer/installers": "^1.5"
+    },
+    "require-dev": {
+        "automattic/vipwpcs": "^0.3.0",
+        "roave/security-advisories": "dev-master",
+        "wp-coding-standards/wpcs": "^1.1"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    },
+    "scripts": {
+        "check-style": "phpcs --colors -p",
+        "pretag": [
+            "composer update --no-suggest",
+            "@check-style",
+            "composer normalize",
+            "doctoc README.md",
+            "github_changelog_generator --no-verbose"
+        ]
+    },
+    "support": {
+        "email": "hello@itineris.co.uk",
+        "issues": "https://github.com/ItinerisLtd/avado-prerequisites-demo/issues",
+        "source": "https://github.com/ItinerisLtd/avado-prerequisites-demo"
+    }
+}
